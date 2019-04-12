@@ -1,0 +1,14 @@
+D:\Treinamentos\TreinamentoCSharp\bin\Debug\netcoreapp2.2\TreinamentoCSharp.deps.json
+D:\Treinamentos\TreinamentoCSharp\bin\Debug\netcoreapp2.2\TreinamentoCSharp.runtimeconfig.json
+D:\Treinamentos\TreinamentoCSharp\bin\Debug\netcoreapp2.2\TreinamentoCSharp.runtimeconfig.dev.json
+D:\Treinamentos\TreinamentoCSharp\bin\Debug\netcoreapp2.2\TreinamentoCSharp.dll
+D:\Treinamentos\TreinamentoCSharp\bin\Debug\netcoreapp2.2\TreinamentoCSharp.pdb
+D:\Treinamentos\TreinamentoCSharp\obj\Debug\netcoreapp2.2\TreinamentoCSharp.csprojAssemblyReference.cache
+D:\Treinamentos\TreinamentoCSharp\obj\Debug\netcoreapp2.2\TreinamentoCSharp.csproj.CoreCompileInputs.cache
+D:\Treinamentos\TreinamentoCSharp\obj\Debug\netcoreapp2.2\TreinamentoCSharp.RazorAssemblyInfo.cache
+D:\Treinamentos\TreinamentoCSharp\obj\Debug\netcoreapp2.2\TreinamentoCSharp.RazorAssemblyInfo.cs
+D:\Treinamentos\TreinamentoCSharp\obj\Debug\netcoreapp2.2\TreinamentoCSharp.AssemblyInfoInputs.cache
+D:\Treinamentos\TreinamentoCSharp\obj\Debug\netcoreapp2.2\TreinamentoCSharp.AssemblyInfo.cs
+D:\Treinamentos\TreinamentoCSharp\obj\Debug\netcoreapp2.2\TreinamentoCSharp.RazorTargetAssemblyInfo.cache
+D:\Treinamentos\TreinamentoCSharp\obj\Debug\netcoreapp2.2\TreinamentoCSharp.dll
+D:\Treinamentos\TreinamentoCSharp\obj\Debug\netcoreapp2.2\TreinamentoCSharp.pdb
