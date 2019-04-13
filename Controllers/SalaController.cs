@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TreinamentoCSharp.Dominio;
 using TreinamentoCSharp.Infra;
+using TreinamentoCSharp.Model;
 
 namespace TreinamentoCSharp.Controllers
 {
@@ -13,42 +14,87 @@ namespace TreinamentoCSharp.Controllers
     public class SalaController : ControllerBase
     {
         private readonly Contexto _contexto;
-
         public SalaController(Contexto contexto)
         {
             this._contexto = contexto;
         }
-
+       
         [HttpGet]
         public IActionResult Get()
         {
             List<Sala> salas = this._contexto.Sala.ToList();
 
-            if (salas.Count == 0)
+            if(salas.Count == 0)
                 return NotFound();
-                
+
             return Ok(salas);
         }
-
+       
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
-        }
+            Sala sala = this._contexto.Sala.Find(id);
 
+            if(sala == null)
+                return NotFound();
+
+            return Ok(sala);
+        }
+        
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody]SalaModel salaModel)
         {
-        }
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            Sala novaSala = new Sala(salaModel.Nome,
+                salaModel.Capacidade,
+                salaModel.PossuiTV,
+                salaModel.PossuiProjetor);
+
+            this._contexto.Add(novaSala);
+            this._contexto.SaveChanges();
+            return Created("Sala criada com sucesso!", novaSala);
+        }
+       
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] SalaModel salaModel)
         {
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if(id <= 0)
+                return NotFound();
+
+            Sala sala = this._contexto.Sala.Find(id);
+
+            if(sala == null)
+                return NotFound();
+            
+            sala.AlterarNome(salaModel.Nome);
+            sala.AlterarCapacidade(salaModel.Capacidade);
+            sala.AlterarPossuiTV(salaModel.PossuiTV);
+            sala.AlterarProjetor(salaModel.PossuiProjetor);
+
+            this._contexto.Update(sala);
+            this._contexto.SaveChanges();
+            return Ok();
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            if(id <= 0)
+                return NotFound();
+
+            Sala sala = this._contexto.Sala.Find(id);
+
+            if(sala == null)
+                return NotFound();
+
+            this._contexto.Remove(sala);
+            this._contexto.SaveChanges();
+            return Ok();
         }
     }
 }
